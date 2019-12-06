@@ -1,0 +1,29 @@
+<br><br>
+
+   
+<div class="row justify-content-center align-items-center"   >
+    <img src="../../assets/find.ico" class="icon1">
+        <div class="form-group">
+            <select class="form-control" name="clothing" [(ngModel)]="cloth">
+                <option value="jacket">jacket</option>
+                <option value="helmet">helmet</option>
+                <option value="protection">protection</option>
+            </select>
+        </div>
+</div>
+<br><br>
+
+  
+<div class="body row justify-content-center align-items-center"     >
+    <div class=" card-deck" style = "width:55rem; height: 100 px;margin-left: 200px;margin-right:200px;"  >
+        <div class="card-body text-center  mb-3 "   *ngFor="let c of mescloth | clothfilter:cloth">
+                <a [routerLink]="[c._ID]"  >  <img src="{{c.image}}" class="card-img-top" style = "width: 150px; height:100 px; ">  </a>
+                <h6>ID:{{c.ID}}</h6>
+                <h5 class="card-title ">{{c.name}}</h5>
+               <h6><img class="icon" src="../../assets/$.jpg"> {{c.prix}} </h6>
+               
+                
+                    
+        </div>      
+    </div>    
+</div>  

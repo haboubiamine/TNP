@@ -1,0 +1,29 @@
+.body {
+  font-family: Arial, Helvetica, sans-serif;
+  color : rgb(82, 129, 151);
+  text-shadow : 2px 2px 2px rgb(228, 228, 228);
+}
+
+
+.container {
+    padding-top: 50px;
+    padding-bottom: 10px;
+    color: #405065;
+  }
+  
+  .search {
+    max-width: 500px;
+    padding-bottom: 50px;
+    margin:auto;
+  }
+  
+  .form-control {
+    box-shadow: 0 10px 40px 0 #B0C1D9;
+  }
+  .form-control::placeholder  {
+    font-family: FontAwesome;
+  }
+  .icon{
+    width: 20px;
+    height: 20px;
+}

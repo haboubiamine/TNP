@@ -1,0 +1,30 @@
+<br><br>
+
+  <div class="container  ">
+    <div class="row">
+      <div class="search">
+        <div class="form-group ">
+          <input class=" form-control" type="text" name="search1" [(ngModel)]="search1"  placeholder="search by home" >
+          <input class=" form-control" type="text" name="search2" [(ngModel)]="search2"  placeholder="search by prix" >
+        </div>  
+      </div>
+    </div>
+  </div>
+
+
+<div class="body row justify-content-center align-items-center"     >
+    <div class=" card-deck" style = "width:55rem; height: 1000 px;margin-left: 200px;margin-right:200px;"  >
+        <div class="card-body  text-center  mb-3 "   *ngFor="let m of mesmoto | filter:search1 | filter1:search2">
+                <a [routerLink]="[m._ID]"  >  <img src="{{m.image}}" class="card-img-top " style = "width: 250px; height:189 px; ">  </a>
+                <h6>ID:{{m.ID}}</h6>
+                {{m.Home}}
+                <h5 class="card-title ">{{m.name}}</h5>
+               <h6><img class="icon" src="../../assets/$.jpg"> {{m.prix}} </h6>
+               
+                
+                    
+        </div>      
+    </div>    
+</div>  
+
+	

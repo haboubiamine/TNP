@@ -1,0 +1,13 @@
+.icon{
+    width: 100px;
+    height: 100px;
+}
+input.ng-valid {
+    border-left : 2px solid green;
+ }
+ input.ng-invalid {
+     border-left : 2px solid red; 
+    }
+.center {
+        text-align: center;
+    }

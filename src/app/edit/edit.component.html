@@ -1,0 +1,191 @@
+<br><br>
+<h2 class="center" >Motocycle</h2>
+    <div class="row justify-content-center align-items-center"     >
+            
+            <div class=" card card-deck" style = "width:55rem;margin-left: 300px;margin-right: 300px;"  >
+                <div class="card-body text-center  mb-3 "  style = "width: 327px; height:189 px;">
+                        <img class="icon card-img-top  " src="../../assets/add.png" >
+                        <form  #f="ngForm" (ngSubmit)="onSubmit(f)" >
+                                        <div class="form-group ">
+                                        
+                                                <input type="text" id="ID" name="ID" class="form-control"  [(ngModel)]="ID" placeholder="ID" required #IDM="ngModel" >
+                                                    <div [hidden]="!IDM.errors?.required || IDM.pristine"  class="alert alert-danger">ID required</div>
+
+                                                <input type="text" class="form-control" id="house" name="home"  placeholder="House" [(ngModel)]="home" required #HOMEM="ngModel">  
+                                                    <div [hidden]="!HOMEM.errors?.required || HOMEM.pristine"  class="alert alert-danger">Home required</div>
+                                        
+                                                <input type="text" class="form-control" id="nom" name="name" [(ngModel)]="name" placeholder="name" required #NAMEM="ngModel" >
+                                                    <div [hidden]="!NAMEM.errors?.required ||NAMEM.pristine"  class="alert alert-danger">Home required</div>
+                                        
+                                                <input type="number" class="form-control" id="prix" name=prix [(ngModel)]="prix" placeholder="$$" required #prixm="ngModel" >    
+                                                    <div *ngIf="prixm.invalid && prixm.dirty" class="alert alert-danger">prix required and must be  Number </div>
+
+                                                <input type="text"  class="form-control" id="image" name="img"   [(ngModel)]="img" required #IMGM="ngModel">
+                                                    <div [hidden]="!IMGM.errors?.required || IMGM.pristine"  class="alert alert-danger">Image required</div>
+                                        
+                                                <input type="date" class="form-control"id="date" name="date" [(ngModel)]="date" placeholder="dd/mm/yyyy" required #DATEM="ngModel" >  
+                                                    <div [hidden]="!DATEM.errors?.required || DATEM.pristine"  class="alert alert-danger">Date required</div>  
+                                       
+                                                <input type="number" class="form-control" id="fuel" name="fuel" [(ngModel)]="fuel" placeholder="fuel" required #FUELM="ngModel" >
+                                                    <div [hidden]="!FUELM.errors?.required || FUELM.pristine"  class="alert alert-danger">Fuel capacity required and must be Number</div>
+                                        
+                                                <input type="number" class="form-control" id="Weight" name="Weight" [(ngModel)]="Weight" placeholder="Weight" required #WEIEM="ngModel">
+                                                    <div [hidden]="!WEIEM.errors?.required || WEIEM.pristine"  class="alert alert-danger">Weight required and must be Number</div>
+                                        
+                                                <select class="form-control" name="cooling" [(ngModel)]="cool" required #COOLM="ngModel">
+                                                    <option selected value="liquid_cooling">liquid_cooling</option>
+                                                    <option value="Air-cooling">Air-cooling</option>
+                                                </select>
+                                                    <div [hidden]="!COOLM.errors?.required || COOLM.pristine"  class="alert alert-danger">Cooling System required</div>
+
+                                                <input type="checkbox" id="con" name="condition" class="form-check-input" [(ngModel)]="condition" > New  
+                                        
+                       
+                                              <br><button class="btn btn-success" [disabled]="f.invalid" >ADD</button> <br>
+                                           <div *ngIf="  messageaddmoto " ><h4>{{messageaddmoto}}</h4></div>
+                                                
+                                              
+                                        
+                                        </div>
+                                    </form>
+                </div>
+                <div class="card-body text-center  mb-3 "  style = "width: 327px; height:189 px;">
+                    <img class="icon card-img-top " src="../../assets/edi.jpg" >
+                    <form  #u="ngForm" (ngSubmit)="onUpdate(u)" >
+                                    <div class="form-group ">
+                                    
+                                            <input type="text" id="editID" name="editID" class="form-control"  [(ngModel)]="editID" placeholder="ID"  required #ide="ngModel">
+                                            <div [hidden]="!ide.errors?.required || ide.pristine"  class="alert alert-danger">ID required</div>
+                                    
+                                            <input type="text" class="form-control" id="edithouse" name="edithome"   [(ngModel)]="edithome" placeholder="House" >    
+                                    
+                                            <input type="text" class="form-control" id="editnom" name="editname" [(ngModel)]="editname" placeholder="name"  >
+                                    
+                                            <input type="number" class="form-control" id="editprix" name=editprix [(ngModel)]="editprix" placeholder="$$" >    
+                                    
+                                            <input type="text" class="form-control" id="editimage" name="editimg"  placeholder="../assets/moto/.JPG " [(ngModel)]="editimg" >
+                                    
+                                            <input type="date" class="form-control"id="editdate" name="editdate" [(ngModel)]="editdate" placeholder="dd/mm/yyyy">    
+                                   
+                                            <input type="number" class="form-control" id="editfuel" name="editfuel" [(ngModel)]="editfuel" placeholder="fuel">
+                                    
+                                            <input type="number" class="form-control" id="editWeight" name="editWeight" [(ngModel)]="editWeight" placeholder="Weight">
+                                    
+                                            <select class="form-control" name="editcooling" [(ngModel)]="editcool">
+                                                <option selected value="liquid_cooling">liquid_cooling</option>
+                                                <option value="Air-cooling">Air-cooling</option>
+                                            </select>
+
+                                            <input type="checkbox" id="editcon" name="editcondition" class="form-check-input" [(ngModel)]="editcondition"> New  
+                                    
+                   
+                                          <br>
+                                            <button class="btn btn-warning"  [disabled]="u.invalid">Update</button><br>
+                                            <div *ngIf="  messageupmoto " ><h4>{{messageupmoto}}</h4></div>
+                                          
+                                    
+                                    </div>
+                                </form>
+                </div>
+                <div class="card-body text-center  mb-3 "  style = "width: 327px; height:189 px;">
+                    <img class="icon card-img-top  " src="../../assets/deletet.png" >
+                        <form #d="ngForm" (ngSubmit)="ondelete(d)" >
+                           <div class="form-group ">
+                               <input type="text" id="IDD" name="IDD" class="form-control" [(ngModel)]="IDdelete" placeholder="ID" required #iddel="ngModel">
+                                    <div [hidden]="!iddel.errors?.required || iddel.pristine"  class="alert alert-danger">ID required</div>
+                               <button class="btn btn-danger" [disabled]="d.invalid" >delete</button><br>
+                                    <div *ngIf="messagedelmoto" ><h4>{{messagedelmoto}}</h4></div>
+                           
+                           </div>
+                       </form>
+               </div>
+                                     
+                                       
+                
+         </div>    
+ <br><br>
+         <h2 class="center">Clothing</h2>
+<div class=" card card-deck" style = "width:55rem;margin-left: 300px;margin-right: 300px;"  >
+    <div class="card-body text-center  mb-3 "  style = "width: 327px; height:189 px;">
+            <img class="icon card-img-top  " src="../../assets/add.png" >
+            <form  #c="ngForm" (ngSubmit)="onSubmitcloth(c)" >
+                            <div class="form-group ">
+                            
+                                    <input type="text" id="cID" name="cID" class="form-control"  [(ngModel)]="cID" placeholder="ID"  required #IDC="ngModel">
+                                    <div [hidden]="!IDC.errors?.required || IDC.pristine"  class="alert alert-danger" >ID required</div>
+                            
+                                    <input type="text" class="form-control" id="cnom" name="cname" [(ngModel)]="cname" placeholder="name" required >
+                            
+                                    <input type="number" class="form-control" id="cprix" name=cprix [(ngModel)]="cprix" placeholder="$$" required>    
+
+                                    <input type="text"  class="form-control" id="mark" name="mark" placeholder="mark"  [(ngModel)]="cmark" required>
+
+                                    <input type="text"  class="form-control" id="cimage" name="ccimg"  [(ngModel)]="cimag" required>
+
+                                    <input type="text"  class="form-control" id="taille" name="taille" placeholder="taille"  [(ngModel)]="ctaille" required>
+                            
+                                    <input type="text"  class="form-control" id="type" name="type" placeholder="type"  [(ngModel)]="ctype" required>
+                            
+                                      <br><button class="btn btn-success" [disabled]="c.invalid" >ADD</button> <br>
+                                     <div *ngIf="  messageaddcloth " ><h4>{{messageaddcloth}}</h4></div>
+
+                                    
+                                  
+                            
+                            </div>
+                        </form>
+    </div>
+    <div class="card-body text-center  mb-3 "  style = "width: 327px; height:189 px;">
+        <img class="icon card-img-top " src="../../assets/edi.jpg" >
+        <form  #c1="ngForm" (ngSubmit)="onUpdatecloth(c1)" >
+                        <div class="form-group ">
+                        
+                           
+                            
+                                <input type="text" id="cID" name="cID" class="form-control"  [(ngModel)]="ceID" placeholder="ID"  required #IDCE="ngModel">
+                                <div [hidden]="!IDCE.errors?.required || IDCE.pristine"  class="alert alert-danger">ID required</div>
+                        
+                                <input type="text" class="form-control" id="cenom" name="cename" [(ngModel)]="cename" placeholder="name" >
+                        
+                                <input type="number" class="form-control" id="ceprix" name=ceprix [(ngModel)]="ceprix" placeholder="$$" >    
+
+                                <input type="text"  class="form-control" id="cemark" name="cemark" placeholder="mark"  [(ngModel)]="cemark" >
+
+                                <input type="text"  class="form-control" id="ceimage" name="ceimg" placeholder="../assets/clothing/.JPG"  [(ngModel)]="ceimag"   >
+
+                                <input type="text"  class="form-control" id="cetaille" name="cetaille" placeholder="taille"  [(ngModel)]="cetaille" >
+                        
+                                <input type="text"  class="form-control" id="cetype" name="cetype" placeholder="type"  [(ngModel)]="cetype" >
+                              
+                                <br>  <button class="btn btn-warning" [disabled]="c1.invalid" >Update</button><br>
+                                 <div *ngIf="  messageupcloth " ><h4>{{messageupcloth}}</h4></div>
+                                
+                              
+                               
+                        
+                        </div>
+                    </form>
+    </div>
+    <div class="card-body text-center  mb-3 "  style = "width: 327px; height:189 px;">
+        <img class="icon card-img-top  " src="../../assets/deletet.png" >
+            <form #c3="ngForm" (ngSubmit)="ondeletecloth(c3)" >
+               <div class="form-group ">
+                   <input type="text" id="CIDD" name="CIDD" class="form-control" [(ngModel)]="CIDdelete" placeholder="ID"  required #DEL="ngModel">
+                   <div [hidden]="!DEL.errors?.required || DEL.pristine"  class="alert alert-danger">ID required</div>
+                   <button class="btn btn-danger" [disabled]="c3.invalid">delete</button><br>
+                   <div *ngIf="messagedelcloth" ><h4>{{messagedelcloth}}</h4></div>
+                   
+               
+               </div>
+           </form>
+           <button class="btn btn-danger" (click)="goblack()">Black Friday</button>
+   </div>
+</div> 
+                         
+                    
+                
+       
+    
+    
+
+        

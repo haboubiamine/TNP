@@ -1,0 +1,27 @@
+<br><br>
+<div  class="row justify-content-center align-items-center">
+        <div style = "width: 700x; height:700 px; ">
+                <img src="{{info.image}}" class="card-img-top"  style = "width: 700x; height:450 px; ">
+                <div class="card-body">
+                        <h6 class=" text-center ">{{info.ID}}</h6>
+                        <h6 class=" text-center ">{{info.Home}}</h6>
+                        <h5 class=" text-center ">{{info.name}}</h5>
+                        <ul class="list-group list-group-flush text-center">
+                                
+                                <li class="list-group-item"><img src="../../assets/$.jpg" style = "width: 20px; height:20 px; "> {{info.prix}}</li>
+                                <li class="list-group-item"><img src="../../assets/cooling.png" style = "width: 20px; height:20 px; "> {{info.cooling}}</li>
+                                <li class="list-group-item"><img src="../../assets/date.png" style = "width: 20px; height:20 px; "> {{info.date |date:'dd/MM/yyyy'}}</li>
+                                <li class="list-group-item"><img src="../../assets/fuel.png" style = "width: 20px; height:20 px; "> {{info.Fuel | info }}</li>
+                                <li class="list-group-item"><img src="../../assets/kg.png" style = "width: 20px; height:20 px; "> {{info.Weight | kg}}</li>
+                                <li class="list-group-item"><div *ngIf="info.condition; else used"><img src="../../assets/new.jpg" class="icon"></div>
+                                        <ng-template #used><img src="../../assets/used.jpg" class="icon"></ng-template>
+                                </li>
+                                <li class="list-group-item"><button (click)="onback()" class="btn btn-primary">Back to Motocycle</button></li>
+                                
+                                </ul> 
+                                
+        </div >
+        
+</div>
+       
+       
